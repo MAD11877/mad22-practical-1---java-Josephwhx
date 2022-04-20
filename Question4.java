@@ -18,6 +18,19 @@ public class Question4
      */
      
     Scanner in = new Scanner(System.in);
+    int no = in.nextInt();
+
+    while(no != 0){
+
+      int num = no;
+
+      while(num != 0){
+        System.out.print("*");
+        num--;
+      }
+      System.out.print("\n");
+      no--;
+    }
     
   }
 }
