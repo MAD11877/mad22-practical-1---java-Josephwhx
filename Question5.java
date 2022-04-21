@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Question5
@@ -27,6 +30,38 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
-    
+    int noAttempt = in.nextInt();
+    List<Integer> noList = new ArrayList<Integer>();
+    int mode = 0;
+    int highestCount = 0;
+  
+    //create loop for user to input values
+    for(int i = 0; i != noAttempt; i++){
+      int number = in.nextInt();
+      //add to list
+      noList.add(number);
+    }
+
+    //create loop to run through numbers in list
+    for(int numberInList : noList){
+      int count = 0;
+
+      //create loop to check for duplicates 
+      for(int n = 0; n < noAttempt; n++){
+        //Count number of times the same number appear in list
+        if(noList.get(n) == numberInList){
+          count++;
+        }
+      }
+      //check if count is greater than previous
+      if(count > highestCount){
+        highestCount = count;
+        mode = numberInList;
+      }
+    }
+
+    //Display mode
+    System.out.println(mode);
+
   }
 }
